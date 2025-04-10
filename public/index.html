@@ -7,18 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <input type="checkbox" id="burger-toggle">
+  <!-- Burger Icon -->
+  <label for="burger-toggle" class="burger-container">
+    <div class="burger-line"></div>
+    <div class="burger-line"></div>
+    <div class="burger-line"></div>
+  </label>
+  <!-- Navigation Menu -->
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#power">Power</a></li>
+      <li><a href="#stamina">Stamina</a></li>
+      <li><a href="#bench">Bench</a></li>
+      <li><a href="#squat">Squat</a></li>
+    </ul>
+  </nav>
     <div class="container">
         <div class="section left">
             <div class="click-area">
-                <img id="cookie" src="https://thornfit.pl/wp-content/uploads/2021/12/Hantel-THORN-FIT-Hex-Rubber-Dumbbell425kg-1.png" alt="Cookie">
-                <div class="counter">Clicks: <span id="count">0</span></div>
+                <img id="cookie" src="https://cdn.creazilla.com/silhouettes/2568/dumbbell-silhouette-000000-lg.png" alt="dumbbell">
+                <div class="counter">Power: <span id="count">0</span></div>
+            </div>
+            <div class="click-area">
+                <img id="cookie" src="https://cdn.pixabay.com/photo/2019/05/05/23/04/run-4181899_960_720.png" alt="threadmill">
+                <div class="counter">Stamina: <span id="count">0</span></div>
             </div>
         </div>
     
         <div class="section middle">
+            <h1>Muscle Clicker</h1>
         </div>
     
         <div class="section right">
+            <h2 class="upgrades">Upgrades</h2>
             <div class="upgrade-area">
                 <button class="upgrade-btn" onclick="buyClickUpgrade()">Buy +1 Click Power (Cost: <span id='clickUpgradeCost'>10</span>)</button>
                 <button class="upgrade-btn" onclick="buyAutoClicker()">Buy AutoClicker (Cost: <span id='autoClickerCost'>50</span>)</button>

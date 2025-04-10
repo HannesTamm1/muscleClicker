@@ -21,6 +21,9 @@ let count = 0;
         clickUpgradeCost = Math.floor(clickUpgradeCost * 1.5);
         updateDisplay();
       }
+      else{
+        alert("you are poor, grind a bit and return")
+      }
     }
 
     function buyAutoClicker() {
@@ -29,6 +32,8 @@ let count = 0;
         autoClickers += 1;
         autoClickerCost = Math.floor(autoClickerCost * 1.7);
         updateDisplay();
+      }else{
+        alert("you are poor, grind a bit and return")
       }
     }
 
