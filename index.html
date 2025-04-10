@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="game-container">
-        <h1>Muscle Clicker</h1>
-
-        <div class="score-container">
-            <p>Gains: <span id="cookieCount">0</span></p>
-            <button id="clickButton">Click me!</button>
+    <div class="container">
+        <div class="section left">
+            <div class="click-area">
+                <img id="cookie" src="https://thornfit.pl/wp-content/uploads/2021/12/Hantel-THORN-FIT-Hex-Rubber-Dumbbell425kg-1.png" alt="Cookie">
+                <div class="counter">Clicks: <span id="count">0</span></div>
+            </div>
         </div>
-
-        <div class="store-container">
-            <button id="upgradeButton">Upgrade: +1 gains per click</button>
-            <p>Upgrade cost: <span id="upgradeCost">10</span> cookies</p>
+    
+        <div class="section middle">
         </div>
-    </div>
-
+    
+        <div class="section right">
+            <div class="upgrade-area">
+                <button class="upgrade-btn" onclick="buyClickUpgrade()">Buy +1 Click Power (Cost: <span id='clickUpgradeCost'>10</span>)</button>
+                <button class="upgrade-btn" onclick="buyAutoClicker()">Buy AutoClicker (Cost: <span id='autoClickerCost'>50</span>)</button>
+            </div>
+        </div>
+      </div>
     <script src="index.js"></script>
 </body>
 </html>

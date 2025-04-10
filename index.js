@@ -1,39 +1,45 @@
-// script.js
+let count = 0;
+    let clickPower = 1;
+    let autoClickers = 0;
+    let clickUpgradeCost = 10;
+    let autoClickerCost = 50;
 
-// Initialize cookies and upgrade cost
-let cookies = 0;
-let cookiesPerClick = 1;
-let upgradeCost = 10;
+    const countDisplay = document.getElementById('count');
+    const clickImg = document.getElementById('cookie');
+    const clickUpgradeCostDisplay = document.getElementById('clickUpgradeCost');
+    const autoClickerCostDisplay = document.getElementById('autoClickerCost');
 
-// Get DOM elements
-const cookieCountElement = document.getElementById('cookieCount');
-const clickButton = document.getElementById('clickButton');
-const upgradeButton = document.getElementById('upgradeButton');
-const upgradeCostElement = document.getElementById('upgradeCost');
+    clickImg.addEventListener('click', () => {
+      count += clickPower;
+      updateDisplay();
+    });
 
-// Update the cookie count on the screen
-function updateCookieCount() {
-    cookieCountElement.textContent = cookies;
-}
-
-// Click button logic
-clickButton.addEventListener('click', () => {
-    cookies += cookiesPerClick;
-    updateCookieCount();
-});
-
-// Upgrade button logic
-upgradeButton.addEventListener('click', () => {
-    if (cookies >= upgradeCost) {
-        cookies -= upgradeCost;
-        cookiesPerClick += 1; // Increase cookies per click
-        upgradeCost = Math.floor(upgradeCost * 1.5); // Increase upgrade cost
-        upgradeCostElement.textContent = upgradeCost;
-        updateCookieCount();
-    } else {
-        alert('Not enough cookies!');
+    function buyClickUpgrade() {
+      if (count >= clickUpgradeCost) {
+        count -= clickUpgradeCost;
+        clickPower += 1;
+        clickUpgradeCost = Math.floor(clickUpgradeCost * 1.5);
+        updateDisplay();
+      }
     }
-});
 
-// Initialize the game
-updateCookieCount();
+    function buyAutoClicker() {
+      if (count >= autoClickerCost) {
+        count -= autoClickerCost;
+        autoClickers += 1;
+        autoClickerCost = Math.floor(autoClickerCost * 1.7);
+        updateDisplay();
+      }
+    }
+
+    function updateDisplay() {
+      countDisplay.textContent = count;
+      clickUpgradeCostDisplay.textContent = clickUpgradeCost;
+      autoClickerCostDisplay.textContent = autoClickerCost;
+    }
+
+    // Auto-click every second
+    setInterval(() => {
+      count += autoClickers;
+      updateDisplay();
+    }, 1000);
