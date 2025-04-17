@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <input type="checkbox" id="burger-toggle">
+  <!-- Burger Icon -->
+  <label for="burger-toggle" class="burger-container">
+    <div class="burger-line"></div>
+    <div class="burger-line"></div>
+    <div class="burger-line"></div>
+  </label>
+  <!-- Navigation Menu -->
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="power.html">Power</a></li>
+      <li><a href="stamina.html">Stamina</a></li>
+      <li><a href="bench.html"><b>Bench</b></a></li>
+      <li><a href="squat.html">Squat</a></li>
+    </ul>
+  </nav>
+    <div class="container">
+        <div class="section left">
+            <div class="click-area">
+                <img id="cookie" src="https://pngimg.com/d/powerlifting_PNG26.png" alt="bench">
+                <div class="counter">Bench: <span id="count">0</span></div>
+            </div>
+        </div>
+    
+        <div class="section middle">
+            <h1>Muscle Clicker</h1>
+        </div>
+    
+        <div class="section right">
+            <h2 class="upgrades">Upgrades</h2>
+            <div class="upgrade-area">
+                <button class="upgrade-btn" onclick="buyClickUpgrade()">Buy +1 Bench Click  (Cost: <span id='clickUpgradeCost'>10</span>)</button>
+                <button class="upgrade-btn" onclick="buyAutoClicker()">Buy AutoClicker (Cost: <span id='autoClickerCost'>50</span>)</button>
+            </div>
+        </div>
+      </div>
+    <script src="index.js"></script>
+</body>
+</html>
