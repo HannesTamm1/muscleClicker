@@ -48,3 +48,37 @@ let count = 0;
       count += autoClickers;
       updateDisplay();
     }, 1000);
+
+    function saveGame() {
+      const saveData = {
+        count,
+        clickPower,
+        autoClickers,
+        clickUpgradeCost,
+        autoClickerCost
+      };
+      localStorage.setItem('strengthClickerSave', JSON.stringify(saveData));
+    }
+    
+    function loadGame() {
+      const saved = localStorage.getItem('strengthClickerSave');
+      if (saved) {
+        const saveData = JSON.parse(saved);
+        count = saveData.count || 0;
+        clickPower = saveData.clickPower || 1;
+        autoClickers = saveData.autoClickers || 0;
+        clickUpgradeCost = saveData.clickUpgradeCost || 10;
+        autoClickerCost = saveData.autoClickerCost || 50;
+        updateDisplay();
+      }
+    }
+    
+    // Auto-save every 5 seconds
+    setInterval(saveGame, 5000);
+    
+    // Save on window close
+    window.addEventListener('beforeunload', saveGame);
+    
+    // Load on page load
+    window.addEventListener('load', loadGame);
+    
