@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muscle Clicker Game</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -50,8 +51,8 @@
             <h2 class="upgrades">Upgrades</h2>
             <div class="upgrade-area">
                 <button class="upgrade-btn" onclick="buyClickUpgrade()">Buy +1 Click Power (Cost: <span id='clickUpgradeCost'>10</span>)</button>
-                <button class="upgrade-btn" onclick="buyAutoClicker()">Buy AutoClicker (Cost: <span id='autoClickerCost'>50</span>)</button>
-                <button class="upgrade-btn" onclick="buyMultyplier()">Buy multiplier (Cost: <span id='multiplierCost'>200</span>)</button>
+                <button id="auto-btn" class="upgrade-btn" onclick="buyAutoClicker()">Buy AutoClicker (Cost: <span id='autoClickerCost'>50</span>)</button>
+                <button id="multiplier-btn" class="upgrade-btn" onclick="buyMultyplier()">Buy Multiplier (cost: 500)</button>
             </div>
             <h2 class="reset">Reset</h2>
             <div class="reset-area">
@@ -61,12 +62,12 @@
             </div>
             <h2 class="reset">sponsors</h2>
             <div class="reset-area">
-              <button class="sponsor-btn">myFitness</button>
-              <button class="sponsor-btn">fitness24/7</button>
-              <button class="sponsor-btn">HC Gym</button>
-              <button class="sponsor-btn">gymshark</button>
-              <button class="sponsor-btn">siberia</button>
-              <button class="sponsor-btn">monster</button>
+              <button class="sponsor-btn">myFitness (cost: 250)</button>
+              <button class="sponsor-btn">fitness24/7 (cost: 250)</button>
+              <button class="sponsor-btn">HC Gym (cost: 250)</button>
+              <button class="sponsor-btn">gymshark (cost: 250)</button>
+              <button class="sponsor-btn">siberia (cost: 250)</button>
+              <button class="sponsor-btn">monster (cost: 250)</button>
             </div>
           </div>
       </div>
